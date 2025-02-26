@@ -3,8 +3,8 @@ Question Link - https://www.namastesql.com/coding-problem/8-library-borrowing-ha
 Solution
 
 ``` sql
-select 
-	bw.BorrowerName,
+select
+  bw.BorrowerName,
   group_concat(bo.BookName order by bo.BookName) as BorrowedBooks
 from 
 	Borrowers bw 
