@@ -50,7 +50,7 @@ home_address_percent |
 ```sql
 select 
   round(100.0 * count(case when shipping_address = address then 1 end)/
-  count(*),2) as home_address_percent
+  NULLIF(count(*),0),2) as home_address_percent
 from 
   transactions t 
 left join 
